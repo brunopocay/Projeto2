@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="col p-4">
+      <h2>Pesquisa Exames</h2>
+      <form (ngSubmit)="pesquisar()">
+        <div class="row mb-2">
+          <div class="col-md-6 form-group">
+            <label>Data inicial:</label>
+            <input type="date" class="form-control" [value]="dataInicial" name="dataInicial">
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Data final:</label>
+            <input type="date" class="form-control" [value]="dataAtual" name="dataFinal">
+          </div>
+        </div>
+        <div class="form-group mb-2">
+          <label>Requisição</label>
+          <input type="text" class="form-control"  name="requisicao">
+        </div>
+        <div class="form-group mb-2">
+          <label>Nome do paciente:</label>
+          <input type="text" class="form-control"  name="nomePaciente">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Pesquisar</button>
+      </form>
+      <div class="mt-4">
+        <app-tableresult [tableResultData]="listaDeExames" [tableColor]="'info'"></app-tableresult>
+      </div>
+    </div>
+  </div>
+  
